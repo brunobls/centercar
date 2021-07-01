@@ -44,5 +44,5 @@
 
 obsevações gerais: acredito que poderia ter organização melhor o processo do docker, porém eu não conseguir deixar mais organizado por ser a primeira fazer que faço essas configurações e também acredito que daria para deixar melhor as variáveis de ambientes para host e port de cada aplicação. 
 
-
+**O arquivo `experiência de uso da aplicação mobile.rar` contém a gravação em tela da aplicação rodando no mobile**
 
