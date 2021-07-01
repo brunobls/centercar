@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "gateway",
+            "cwd": "gateway",
+            "request": "launch",
+            "type": "dart",
+            "program": "bin/server.dart"
+        },
+        {
+            "name": "app",
+            "cwd": "app",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "flutterMode": "debug"
+        }
+    ]
+}

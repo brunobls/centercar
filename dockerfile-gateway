@@ -1,0 +1,18 @@
+################
+FROM google/dart:2.13 AS build
+
+WORKDIR /app
+COPY . .
+RUN ls -la
+RUN cd gateway && dart pub get
+RUN cd gateway && dart pub get --offline
+RUN cd gateway && dart pub run build_runner build --delete-conflicting-outputs
+RUN cd gateway && dart compile exe bin/server.dart -o bin/server
+RUN cd gateway/bin && ls -la
+
+##########################
+FROM subfuzion/dart:slim
+COPY --from=build /app/gateway/bin/server /app/bin/server
+
+EXPOSE 8080
+ENTRYPOINT ["/app/bin/server"]
