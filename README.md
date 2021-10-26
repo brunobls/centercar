@@ -42,7 +42,5 @@
         * `docker run -it -p 8080:8080 --name centercar-gateway --rm img-centercar-gateway`
     obs: O apontamento da aplicação do frontend está comunicação com a API usando o **meu IP junto a porta 8080** e vai ser preciso ser alterado o arquivo ("\app\lib\helpers\rest_client.dart") para o IP da rede que for rodar a API. 
 
-obsevações gerais: acredito que poderia ter organização melhor o processo do docker, porém eu não conseguir deixar mais organizado por ser a primeira fazer que faço essas configurações e também acredito que daria para deixar melhor as variáveis de ambientes para host e port de cada aplicação. 
-
 **O arquivo `experiência de uso da aplicação mobile.rar` contém a gravação em tela da aplicação rodando no mobile**
 
