@@ -4,22 +4,22 @@
 
 ## Regras do exercício:
 
-* Construir um sistema para uma agência de veículos, ele será composto por uma api e um frontend (Desktop ou Mobile)
+* Construir um sistema para uma agência de veículos no qual será composto por uma api e um frontend (Desktop ou Mobile)
 * O sistema recisa ser capaz de:
-    * Cadastrar a compra de um veículo, modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra
-    * Registrar a venda de um veículo, com data da venda, valor da venda e comissão do vendedor (10% sobre o lucro da venda)
+    * Cadastrar a compra de um veículo com os detalhes de modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra
+    * Registrar a venda de um veículo com os detalhes de data da venda, valor da venda e comissão do vendedor (10% sobre o lucro da venda)
     * Deverá ser possível listar todos os veículos, veículos disponíveis e histórico de veículos vendidos
     * Listar o valor total em compras e vendas, lucro/prejuízo do mês e o valor pago em comissões
 
 
 ## Considerações na resolução do exercíco
-* Linguagem escolhida for o Dart para ser usada no desenvolvimento do backend como do fronted. Acredito que o uso de uma única linguagem para todo o projeto pode gerar custo menor e uma agilidade maior no desenvolvimento do mesmo. Como framework eu usei o Flutter para um desenvolvimento croos plataform, podendo assim gerar um build do frontend para mobile nativo ou web nativo, podendo até gerar um versão desktop para agência. 
+* O Dart foi a linguagem escolhida para ser usada no desenvolvimento do backend como do fronted. Acredito que o uso de uma única linguagem para todo o projeto pode gerar custo menor e uma agilidade maior no desenvolvimento do mesmo. Como framework eu usei o Flutter para um desenvolvimento cross platform, podendo assim gerar um build do frontend para mobile nativo ou web nativo e podendo até gerar um versão desktop para agência. 
 * O projeto está dividido na seguintes partes:
     * app -> Responsável pelo desenvolvimento do frontend
-    * services -> Responsável pelo desenvolvimento de três contextos do projeto, sendo eles: catálago, venda e relatório. O objetivo dessa divisão é já iniciar os trabalhos para uma visão de arquitetura para microserviço, podendo no futuro trabalhar com CQRS, Mensageria e outros padrões necessários para ganhar escala.
+    * services -> Responsável pelo desenvolvimento de três contextos do projeto, sendo eles: catálago, venda e relatório. O objetivo dessa divisão é já iniciar uma visão de arquitetura para microserviço, podendo no futuro trabalhar com CQRS, Mensageria e outros padrões necessários para ganhar escala.
     * gateway -> Responsável pelo backend e com a comunicação com os contextos do projeto. Essa comunicação é feita por injeção de dependência, porém pode ser feita com comunicação entre API ou com gRPC.
     * core -> Responsável pelo compartilhamento de recursos entre os contextos do projeto. 
-* Para o banco de dados eu usei o mysql, porém não tem um relacionamento através de chaves estrangeiras já pensando no isolamento do banco de escrita entre os contextos (servises). 
+* Para o banco de dados eu usei o mysql, porém não tem um relacionamento através de chaves estrangeiras pois foi pensando no isolamento do banco de escrita entre os contextos (services). 
 
 
 
